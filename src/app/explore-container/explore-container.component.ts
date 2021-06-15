@@ -10,7 +10,7 @@ import * as moment from 'moment';
 })
 export class ExploreContainerComponent implements OnInit {
 
-  marriageDate = momentTimezone.tz("202011151900", "YYYYMMDDHHmm", "Asia/Kolkata").toISOString();
+  marriageDate = momentTimezone.tz("202106150450", "YYYYMMDDHHmm", "Europe/London").toISOString();
   days = 0;
   hours = 0;
   mins = 0;
