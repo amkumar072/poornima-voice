@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  date = `202106270000`;
+
+  message = `Baby!!!.`;
+
+  constructor() { }
 
 }

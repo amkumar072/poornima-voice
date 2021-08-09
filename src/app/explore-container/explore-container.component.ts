@@ -10,20 +10,23 @@ import * as moment from 'moment';
 })
 export class ExploreContainerComponent implements OnInit {
 
-  marriageDate = momentTimezone.tz("202106150450", "YYYYMMDDHHmm", "Europe/London").toISOString();
+  @Input() name: string;
+  @Input() message: string;
+  @Input() date: string;
+
+  marriageDate;
+  months = 0;
   days = 0;
   hours = 0;
   mins = 0;
   secs = 0;
-
-  @Input() name: string;
-  @Input() message: string;
 
   constructor(
     private _speechService: SpeechService
   ) { }
 
   ngOnInit() {
+    this.marriageDate = momentTimezone.tz(this.date, "YYYYMMDDHHmm", "Europe/London").toISOString();
     this.getCount();
   }
 
@@ -44,6 +47,9 @@ export class ExploreContainerComponent implements OnInit {
     } else {
 
       amount = Math.floor(amount / 1000);//kill the "milliseconds" so just secs
+
+      this.months = Math.floor(amount / 2629744); //Months
+      amount = amount % 2629744;
 
       this.days = Math.floor(amount / 86400);//days
       amount = amount % 86400;

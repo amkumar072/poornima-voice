@@ -7,10 +7,9 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  message = `All the best baby!!!.
-  Do Well.
-  I'm Okay with 2nd Mark also.
-  `
+  date = `202010300900`;
+
+  message = `Haapy Anniversary!!!.`;
 
   constructor() { }
 
