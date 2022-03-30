@@ -8,7 +8,9 @@ import * as momentTimezone from 'moment-timezone';
 })
 export class Tab1Page {
   dateLocal = `202106150450`;
-  date = momentTimezone.tz(this.dateLocal, 'YYYYMMDDHHmm', 'Europe/London');
+  date = momentTimezone
+    .tz(this.dateLocal, 'YYYYMMDDHHmm', 'Europe/London')
+    .toISOString();
 
   message = ` Poornima! Poornima! Poornima!
   You are my life, you are my love.

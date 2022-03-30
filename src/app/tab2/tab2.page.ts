@@ -7,7 +7,9 @@ import * as momentTimezone from 'moment-timezone';
 })
 export class Tab2Page {
   dateLocal = `202010300900`;
-  date = momentTimezone.tz(this.dateLocal, 'YYYYMMDDHHmm', 'Asia/Calcutta');
+  date = momentTimezone
+    .tz(this.dateLocal, 'YYYYMMDDHHmm', 'Asia/Calcutta')
+    .toISOString();
 
   message = `Haapy Anniversary!!!.`;
 
