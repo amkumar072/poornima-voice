@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as momentTimezone from 'moment-timezone';
 
 @Component({
   selector: 'app-tab3',
@@ -6,7 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['tab3.page.scss'],
 })
 export class Tab3Page {
-  date = `202106270000`;
+  dateLocal = `202106270000`;
+  date = momentTimezone.tz(this.dateLocal, 'YYYYMMDDHHmm', 'Europe/London');
 
   message = `Baby!!!. I Love you`;
 

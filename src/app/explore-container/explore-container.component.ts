@@ -13,7 +13,6 @@ export class ExploreContainerComponent implements OnInit {
   @Input() message: string;
   @Input() date: string;
 
-  marriageDate;
   years = 0;
   months = 0;
   days = 0;
@@ -24,9 +23,6 @@ export class ExploreContainerComponent implements OnInit {
   constructor(private _speechService: SpeechService) {}
 
   ngOnInit() {
-    this.marriageDate = momentTimezone
-      .tz(this.date, 'YYYYMMDDHHmm', 'Europe/London')
-      .toISOString();
     this.getCount();
   }
 
@@ -36,7 +32,7 @@ export class ExploreContainerComponent implements OnInit {
 
   getCount() {
     const dateNow = new Date(); //grab current date
-    let amount = dateNow.getTime() - new Date(this.marriageDate).getTime(); //calc milliseconds between dates
+    let amount = dateNow.getTime() - new Date(this.date).getTime(); //calc milliseconds between dates
     // delete dateNow;
 
     // time is already past
