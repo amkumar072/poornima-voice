@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { SpeechService } from '../services/speech.service';
 import * as momentTimezone from 'moment-timezone';
 import * as moment from 'moment';
+import { extendMoment } from 'moment-range';
+const rangeMoment = extendMoment(moment);
 
 @Component({
   selector: 'app-explore-container',
@@ -20,6 +22,16 @@ export class ExploreContainerComponent implements OnInit {
   mins = 0;
   secs = 0;
 
+  // calc value
+  yearCalc = 31556962;
+  // monthCalc = 2630400;
+  monthCalc = 2629744;
+  dayCalc = 86400;
+  hourCalc = 3600;
+  minCalc = 60;
+
+  millisecCalc = 1000;
+
   constructor(private _speechService: SpeechService) {}
 
   ngOnInit() {
@@ -33,28 +45,28 @@ export class ExploreContainerComponent implements OnInit {
   getCount() {
     const dateNow = new Date(); //grab current date
     let amount = dateNow.getTime() - new Date(this.date).getTime(); //calc milliseconds between dates
-    // delete dateNow;
 
     // time is already past
     if (amount < 0) {
       document.getElementById('countbox').innerHTML = 'Now!';
     } else {
-      amount = Math.floor(amount / 1000); //kill the "milliseconds" so just secs
+      amount = Math.floor(amount / this.millisecCalc); //kill the "milliseconds" so just secs
+      const finalMillisec = amount;
 
-      this.years = Math.floor(amount / 31556928); //Years
-      amount = amount % 31556928;
+      this.years = Math.floor(amount / this.yearCalc); //Years
+      amount = amount % this.yearCalc;
 
-      this.months = Math.floor(amount / 2629744); //Months
-      amount = amount % 2629744;
+      this.months = Math.floor(amount / this.monthCalc); //Months
+      amount = amount % this.monthCalc;
 
-      this.days = Math.floor(amount / 86400); //days
-      amount = amount % 86400;
+      this.days = Math.floor(amount / this.dayCalc); //days
+      amount = finalMillisec % this.dayCalc;
 
-      this.hours = Math.floor(amount / 3600); //hours
-      amount = amount % 3600;
+      this.hours = Math.floor(amount / this.hourCalc); //hours
+      amount = amount % this.hourCalc;
 
-      this.mins = Math.floor(amount / 60); //minutes
-      amount = amount % 60;
+      this.mins = Math.floor(amount / this.minCalc); //minutes
+      amount = amount % this.minCalc;
 
       this.secs = Math.floor(amount); //seconds
 
