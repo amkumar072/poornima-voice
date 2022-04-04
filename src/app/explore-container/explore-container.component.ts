@@ -1,9 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SpeechService } from '../services/speech.service';
-import * as momentTimezone from 'moment-timezone';
-import * as moment from 'moment';
-import { extendMoment } from 'moment-range';
-const rangeMoment = extendMoment(moment);
 
 @Component({
   selector: 'app-explore-container',
