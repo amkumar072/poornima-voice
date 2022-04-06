@@ -7,9 +7,9 @@ import * as momentTimezone from 'moment-timezone';
   styleUrls: ['tab3.page.scss'],
 })
 export class Tab3Page {
-  dateLocal = `202106270000`;
+  dateLocal = `202204062349`;
   date = momentTimezone
-    .tz(this.dateLocal, 'YYYYMMDDHHmm', 'Europe/London')
+    .tz(this.dateLocal, 'YYYYMMDDHHmm', 'Asia/Calcutta')
     .toISOString();
 
   message = `Baby!!!. I Love you`;

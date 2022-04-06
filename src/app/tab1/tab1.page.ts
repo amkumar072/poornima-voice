@@ -7,9 +7,9 @@ import * as momentTimezone from 'moment-timezone';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-  dateLocal = `202106150450`;
+  dateLocal = `202202271730`;
   date = momentTimezone
-    .tz(this.dateLocal, 'YYYYMMDDHHmm', 'Europe/London')
+    .tz(this.dateLocal, 'YYYYMMDDHHmm', 'Asia/Calcutta')
     .toISOString();
 
   message = ` Poornima! Poornima! Poornima!
