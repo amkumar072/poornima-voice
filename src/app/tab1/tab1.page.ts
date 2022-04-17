@@ -7,7 +7,7 @@ import * as momentTimezone from 'moment-timezone';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page {
-  dateLocal = `202202271730`;
+  dateLocal = `202204151330`;
   date = momentTimezone
     .tz(this.dateLocal, 'YYYYMMDDHHmm', 'Asia/Calcutta')
     .toISOString();
