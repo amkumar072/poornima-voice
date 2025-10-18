@@ -12,7 +12,10 @@ export class Tab3Page {
     .tz(this.dateLocal, 'YYYYMMDDHHmm', 'Asia/Calcutta')
     .toISOString();
 
-  message = `Baby!!!. I Love you`;
+  // message = `Vedhika!!!. I Love you`;
+  message = `Vedhika, my precious girl,
+You are the light in my life and the joy in my heart.
+Every moment with you is a gift, and I love you more than words can ever say. 💖`;
 
   constructor() {}
 }
