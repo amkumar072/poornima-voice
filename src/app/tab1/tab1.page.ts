@@ -5,6 +5,7 @@ import * as momentTimezone from 'moment-timezone';
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
+  standalone: false,
 })
 export class Tab1Page {
   dateLocal = `202508170615`;
@@ -19,5 +20,5 @@ No words can truly express how deeply I love you.
 Always remember—wherever you go,
 My love will follow you like your shadow. 💫`;
 
-  constructor() {}
+  constructor() { }
 }

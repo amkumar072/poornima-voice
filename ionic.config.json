@@ -1,5 +1,7 @@
 {
   "name": "poornima-voice",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

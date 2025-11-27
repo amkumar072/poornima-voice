@@ -4,6 +4,7 @@ import * as momentTimezone from 'moment-timezone';
   selector: 'app-tab2',
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss'],
+  standalone: false,
 })
 export class Tab2Page {
   dateLocal = `202010300900`;
@@ -19,5 +20,5 @@ export class Tab2Page {
   You are the heartbeat of my life and the soul of my love.
   Thank you for being mine—I love you deeply, endlessly, and always. 💞`;
 
-  constructor() {}
+  constructor() { }
 }
