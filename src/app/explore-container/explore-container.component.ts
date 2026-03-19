@@ -5,11 +5,12 @@ import { SpeechService } from '../services/speech.service';
   selector: 'app-explore-container',
   templateUrl: './explore-container.component.html',
   styleUrls: ['./explore-container.component.scss'],
+  standalone: false,
 })
 export class ExploreContainerComponent implements OnInit {
-  @Input() name: string;
-  @Input() message: string;
-  @Input() date: string;
+  @Input() name!: string;
+  @Input() message!: string;
+  @Input() date!: string;
 
   years = 0;
   months = 0;
@@ -28,7 +29,7 @@ export class ExploreContainerComponent implements OnInit {
 
   millisecCalc = 1000;
 
-  constructor(private _speechService: SpeechService) {}
+  constructor(private _speechService: SpeechService) { }
 
   ngOnInit() {
     this.getCount();
@@ -44,7 +45,10 @@ export class ExploreContainerComponent implements OnInit {
 
     // time is already past
     if (amount < 0) {
-      document.getElementById('countbox').innerHTML = 'Now!';
+      const countbox = document.getElementById('countbox');
+      if (countbox) {
+        countbox.innerHTML = 'Now!';
+      }
     } else {
       amount = Math.floor(amount / this.millisecCalc); //kill the "milliseconds" so just secs
       const finalMillisec = amount;

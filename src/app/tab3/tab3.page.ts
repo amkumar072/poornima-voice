@@ -5,6 +5,7 @@ import * as momentTimezone from 'moment-timezone';
   selector: 'app-tab3',
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss'],
+  standalone: false,
 })
 export class Tab3Page {
   dateLocal = `202204062349`;
@@ -17,5 +18,5 @@ export class Tab3Page {
 You are the light in my life and the joy in my heart.
 Every moment with you is a gift, and I love you more than words can ever say. 💖`;
 
-  constructor() {}
+  constructor() { }
 }

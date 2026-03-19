@@ -38,7 +38,7 @@ export class SpeechService {
         }
       }).then(() => {
         console.log("Success !")
-      }).catch(e => {
+      }).catch((e: any) => {
         console.error("An error occurred :", e)
       })
 
